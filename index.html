@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>lifewithjuno.com</title>
+<style>html,body{margin:0;background:#fff}</style>
+<script id="maria-links" type="application/json">{"crockpot-white-chicken-chili-easy":"https://lifewithjuno.com/crockpot-white-chicken-chili-easy/","delicious-crockpot-steak-bites":"https://lifewithjuno.com/delicious-crockpot-steak-bites/","easter-crockpot-candy":"https://lifewithjuno.com/easter-crockpot-candy/","easy-crock-pot-pot-roast":"https://lifewithjuno.com/easy-crock-pot-pot-roast/","easy-pioneer-womans-crockpot-beef-stew":"https://lifewithjuno.com/easy-pioneer-womans-crockpot-beef-stew/"}</script>
+<script>
+(function () {
+  var links = JSON.parse(document.getElementById("maria-links").textContent);
+  var parts = location.search.replace(/^\?/, "").split("&");
+  var slug = "";
+  try { slug = decodeURIComponent(parts.shift() || ""); } catch (e) {}
+  slug = slug.toLowerCase().replace(/\/+$/, "");
+  var to = links[slug];
+  if (!to) { document.title = "Page not found"; document.addEventListener("DOMContentLoaded", function () { document.body.textContent = "Page not found."; }); return; }
+  var extra = parts.filter(Boolean).join("&");
+  if (extra) {
+    var h = to.indexOf("#"), hash = h < 0 ? "" : to.slice(h), u = h < 0 ? to : to.slice(0, h);
+    to = u + (u.indexOf("?") < 0 ? "?" : "&") + extra + hash;
+  }
+  location.replace(to);
+})();
+</script>
+</head>
+<body>
+</body>
+</html>
